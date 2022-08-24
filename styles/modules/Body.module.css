@@ -1,0 +1,35 @@
+/*==========================================================================
+                            Body Styles
+========================================================================== */
+.bodyContainer{
+    @apply container bg-white m-auto px-3 py-12 w-10/12 lg:max-w-4xl h-auto
+}
+.sortOptionsContainer{
+    @apply flex justify-evenly font-flexo
+}
+.sortOptionsContainer div{
+    @apply w-1/2 flex justify-evenly items-center
+}
+.sortOptionsContainer button{
+    @apply bg-[#30a7d7] text-white w-80 h-12 rounded
+}
+.sortOptionsContainer button:hover{
+    @apply bg-[#1b82b1]
+}
+.sortOptionsContainer label{
+    @apply text-[#a4a4a4] text-[20px] font-flexo
+}
+.sortInput {
+    @apply bg-[#313131] text-white w-64 h-10 rounded
+}
+.sortInput img {
+    @apply invert brightness-0
+}
+.sortInput select {
+    @apply bg-[#313131] text-white w-10/12 h-10 rounded
+}
+
+
+.cardsContainer{
+    @apply  bg-white grid grid-cols-4 gap-3 w-full my-12
+}

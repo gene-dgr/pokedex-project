@@ -1,36 +1,22 @@
-import React from "react";
+import React, {useState} from "react";
 import Image from 'next/image';
+
 import classNames from 'classnames';
 import styles from "@/styles/modules/Searcher.module.css";
 
 export default function QuickSearcher() {
- 
-  return (
-    <>
-      
-      
-        <div >
-            <div className={classNames(styles.titleContainer)}>
-                <h1>Pokédex</h1>
+    const [filtersOpen, setFiltersOpen] = React.useState(false);
+    return (
+        <>
+            <div className={classNames(styles.filtersContainer, filtersOpen ? styles.filtersOpened : styles.filtersClosed)}>
+                     
             </div>
-            <div className={styles.searcherContainer}>
-              <div className={styles.searchSections}>
-                <div className={styles.searchInputContainer} >
-                  <h3>Nombre o número</h3>
-                  <div>
-                      <input type="text" />
-                      <button><Image src="/assets/icons/input-search-bg.png" width={24} height={24} alt="search"/></button>
-                  </div>
-                  <p >¡Usa la búsqueda avanzada para encontrar Pokémon por su tipo, debilidad, habilidad y demás datos!</p>
+            <div className={styles.searchFiltersContainer}>
+                <div className={styles.openFilters} onClick={ () => { setFiltersOpen(!filtersOpen)} }>
+                    <span>Mostrar búsqueda avanzada</span>
+                    <Image src="/assets/icons/down-chevron.png" width={20} height={20}/>
                 </div>
-                <div className={styles.searchTextContainer}>
-                    <p >Busca un Pokémon por su nombre o usando su número de la Pokédex Nacional.</p>
-                </div>
-              </div>
-                
             </div>
-        </div>
-      
-    </>
-  );
+        </>
+    );
 }

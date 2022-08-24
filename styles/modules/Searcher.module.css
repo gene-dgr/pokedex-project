@@ -1,3 +1,6 @@
+/* ==========================================================================
+                        Quick Searcher Styles
+========================================================================== */
 .titleContainer{
     @apply container bg-white m-auto px-3 py-4 w-10/12 lg:max-w-4xl
 }
@@ -25,14 +28,50 @@
     @apply bg-[#ee6b2f] w-14 h-12 rounded mx-5
 }
 .searchInputContainer p{
-    @apply text-white font-roboto text-[14px]
+    @apply text-white font-roboto text-[16px] w-11/12 my-2
 }
 
 
 
 .searchTextContainer{
-    @apply bg-[#4EAD5B] font-flexo text-[20px] text-white w-9/12 h-auto rounded flex justify-center items-center
+    @apply bg-[#4dad5b] font-flexo text-[20px] text-white w-9/12 h-auto rounded flex justify-center items-center pl-3
+}
+.searchTextContainer:hover{
+    @apply bg-[#369143] 
 }
 .searchTextContainer p {
-    @apply my-3 mx-2
+    @apply my-4 mx-2 
+}
+/* ==========================================================================
+
+
+
+
+
+
+/* ==========================================================================
+                        Advanced Searcher Styles
+========================================================================== */
+.searchFiltersContainer{
+    @apply bg-[#616161] h-16 flex justify-center 
+}
+.openFilters{
+    @apply bg-[#616161] flex justify-center items-end text-white font-flexo pb-1 w-[460px] translate-y-4 rounded-xl
+}
+.openFilters span{
+    @apply mx-2  text-center
+}
+.openFilters img{
+    @apply invert mx-2
+}
+
+.filtersContainer{
+    @apply bg-[#616161] 
+}
+
+.filtersOpened{
+    @apply  transition-all  ease-linear delay-300 duration-300 h-[500px]
+}
+.filtersClosed{
+    @apply transition-all  ease-linear delay-300 duration-300 h-0
 }
