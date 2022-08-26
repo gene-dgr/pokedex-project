@@ -4,14 +4,24 @@ import Card from './fragments/card'
 import classNames from 'classnames';
 import styles from "@/styles/modules/Body.module.css";
 
-export default function Body() {
+export default function Body({data}) {
+    //console.log(data);
+    const [pokemons, setPokemons] = React.useState(data);
+    function sortData(option){
+      console.log(option);
+      switch(option){
+         case '1':
+           pokemons.sort((a, b) => {console.log(a)})
+          break;
+     }
+  }
   return (
     <>
       <section>
         <div className={classNames(styles.bodyContainer) } >
             <div className={styles.sortOptionsContainer} >
                 <div>
-                    <button type="">¡Sorpréndeme!</button>
+                    <button type="" onClick={() => sortData("5")}>¡Sorpréndeme!</button>
                 </div>
                 <div>
                     <label htmlFor="sorting">Ordenar por </label>
@@ -22,22 +32,23 @@ export default function Body() {
                             width={28}
                             height={28}
                         />
-                        <select name="sorting" style={{backgroundImage:'/assets/icons/pokeball.svg'}}>
+                        <select name="sorting" onChange={(e) => sortData(e.target.value)}>
                             <option value="1">Numero inferior</option>
+                            <option value="2">Numero superior</option>
+                            <option value="3">A - Z</option>
+                            <option value="4">Z - A</option>
                         </select>
                     </div>
                    
                 </div>
             </div>
             <div className={styles.cardsContainer} >
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+              {
+              data.map((pokemon) => (
+                <Card key={pokemon.name} pokemon={pokemon}/>
+                )
+              )}
+                
             </div>
         </div>
       </section>
