@@ -1,27 +1,22 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Image from 'next/image';
 import Card from './fragments/card'
 import classNames from 'classnames';
 import styles from "@/styles/modules/Body.module.css";
 
-export default function Body({data}) {
-    //console.log(data);
-    const [pokemons, setPokemons] = React.useState(data);
-    function sortData(option){
-      console.log(option);
-      switch(option){
-         case '1':
-           pokemons.sort((a, b) => {console.log(a)})
-          break;
-     }
-  }
+export default function Body({data, setFilter}) {
+    //console.log(data);   
+    
+
+ 
+
   return (
     <>
       <section>
         <div className={classNames(styles.bodyContainer) } >
             <div className={styles.sortOptionsContainer} >
                 <div>
-                    <button type="" onClick={() => sortData("5")}>¡Sorpréndeme!</button>
+                    <button type="" onClick={() => setFilter("5")}>¡Sorpréndeme!</button>
                 </div>
                 <div>
                     <label htmlFor="sorting">Ordenar por </label>
@@ -32,7 +27,7 @@ export default function Body({data}) {
                             width={28}
                             height={28}
                         />
-                        <select name="sorting" onChange={(e) => sortData(e.target.value)}>
+                        <select name="sorting" onChange={(e) => setFilter(e.target.value)}>
                             <option value="1">Numero inferior</option>
                             <option value="2">Numero superior</option>
                             <option value="3">A - Z</option>

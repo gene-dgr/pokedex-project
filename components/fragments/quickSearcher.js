@@ -3,7 +3,7 @@ import Image from "next/image";
 import classNames from "classnames";
 import styles from "@/styles/modules/Searcher.module.css";
 
-export default function QuickSearcher() {
+export default function QuickSearcher({setSearch}) {
   return (
     <>
       <div>
@@ -15,7 +15,10 @@ export default function QuickSearcher() {
             <div className={styles.searchInputContainer}>
               <h3>Nombre o número</h3>
               <div>
-                <input type="text" />
+                <input 
+                  type="text" 
+                  onChange={(e)=>setSearch(e.target.value)}
+                  />
                 <button>
                   <Image
                     src="/assets/icons/input-search-bg.png"
