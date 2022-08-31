@@ -11,7 +11,7 @@ export default function TopHeader({pokemon}) {
         <div>
           <Image
             //src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/00${pokemon.id}')`}
-            src={pokemon.sprites.front_default}
+            src={pokemon.sprites.other["official-artwork"].front_default}
             width={205}
             height={205}
             alt=""
@@ -22,9 +22,9 @@ export default function TopHeader({pokemon}) {
           <h3 className={styles.pokemonName}>{pokemon.name}</h3>
           <div className="flex">
             {
-              pokemon.abilities.map((ability, k) => (
+              pokemon.types.map((type, k) => (
                 <div key={k} className={styles.pokemonType}>
-                  <span >{ability.ability.name}</span>
+                  <span >{type.type.name}</span>
                 </div>
               ))
             }
